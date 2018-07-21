@@ -1,2 +1,2 @@
-# organiser
-a web-based organisation tool
+# Organiser
+A web-based organisation tool

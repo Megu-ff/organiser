@@ -1,0 +1,21 @@
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.headingTitle {
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.cardCaption {
+  font-size: 2em;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+section {
+  padding: 40px 0;
+  margin: 0 75px 0 75px;
+}
