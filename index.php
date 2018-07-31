@@ -1,3 +1,11 @@
+<?php
+  session_start(); 
+   if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,82 +18,37 @@
 
   <!-- Custom CSS -->
   <link href="css/styles.css" rel="stylesheet">
-  <title>Dashboard</title>
+  <title>Organiser</title>
 </head>
 
 <body>
-  <section id='dashboard'>
-    <div class='container-fluid'>
-      <div class='row'>
-        <div class='cardContainer bg-secondary text-white col-xl-5' id='calendarContainer'>
-          <div class='cardCaption' id='calendarCaption'>
-            <p>
-              Calendar
+  <?php include 'header.php';?>
+  <div class='container-fluid'>
+    <div class='container text-center'>
+      <h1 class='mt-3'>Organiser</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet turpis pretium, faucibus magna nec, imperdiet elit.</p>
+      <section class='login register'>
+        <div class='row'>
+        <?php if(isset($_SESSION['username'])): ?>
+          <div class='col-xl-12'>
+            <a class='btn btn-primary btn-xl' href='dashboard.php'>Dashboard</a>
+          </div>
+          <?php else: ?>
+          <div class='col-xl-6'>
+            <p class='important'>
+              <a class='btn btn-primary btn-xl' href='login.php'>Login</a>
             </p>
           </div>
-          <div class='cardContent' id='calendarContent'>
-            Google Calendars Here
-          </div>
-        </div>
-        <div class='cardContainer middle bg-secondary text-white col-xl-4' id='scheduleContainer'>
-          <div class='cardCaption' id='scheduleCaption'>
+          <div class='col-xl-6'>
             <p>
-              Schedule
+              <a class='btn btn-primary btn-xl' href='register.php'>Register</a>
             </p>
           </div>
-          <div class='cardContent' id='scheduleContent'>
-            Schedule Module Here
-          </div>
+          <?php endif ?>
         </div>
-        <div class='cardContainer bg-secondary text-white col-xl-3' id='reminderContainer'>
-          <div class='cardCaption' id='reminderCaption'>
-            <p>
-              Reminders
-            </p>
-          </div>
-          <div class='cardContent' id='reminderContent'>
-            Reminders Module Here
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
-  </section>
-  <section id='dashboard top'>
-    <div class='container-fluid'>
-      <div class='row'>
-        <div class='cardContainer bg-secondary text-white col-xl-5' id='calendarContainer'>
-          <div class='cardCaption' id='calendarCaption'>
-            <p>
-              Complex Tasks
-            </p>
-          </div>
-          <div class='cardContent' id='calendarContent'>
-            Complex Tasks Module Here
-          </div>
-        </div>
-        <div class='cardContainer bg-secondary text-white col-xl-4' id='scheduleContainer'>
-          <div class='cardCaption' id='scheduleCaption'>
-            <p>
-              Emails
-            </p>
-          </div>
-          <div class='cardContent' id='scheduleContent'>
-            Email Module Here
-          </div>
-        </div>
-        <div class='cardContainer bg-secondary text-white col-xl-3' id='reminderContainer'>
-          <div class='cardCaption' id='reminderCaption'>
-            <p>
-              Weather
-            </p>
-          </div>
-          <div class='cardContent' id='reminderContent'>
-            Weather Module Here
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

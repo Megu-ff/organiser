@@ -1,3 +1,12 @@
+<?php
+include('server.php');
+   if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +23,11 @@
 </head>
 
 <body>
-  <section id='registration'>
+  <?php include 'header.php';?>
+  <section id='register' class='register'>
     <div class='container'>
       <form method=POST action='register.php'>
+        <?php include('errors.php'); ?>
         <div class='row'>
           <div class='col-xl-12'>
             <h1 class='text-center headingTitle'>Registration Form</h1>
@@ -42,6 +53,7 @@
           </div>
         </div>
       </form>
+      <p>Already have an account? Login <a href='login.php'>here.</a></p>
     </div>
   </section>
 

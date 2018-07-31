@@ -1,6 +1,12 @@
 body {
   overflow-x: hidden;
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #6c757d;
+}
+
+.cardContainer {
+  min-height: 415px;
+  margin-top: 25px;
 }
 
 .headingTitle {
@@ -15,7 +21,141 @@ body {
   margin-bottom: 15px;
 }
 
-section {
-  padding: 40px 0;
-  margin: 0 75px 0 75px;
+table,
+th,
+td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #3D4651;
+}
+
+table tr:nth-child(even) {
+  background-color: #1C2025;
+}
+
+section.login,
+section.register {
+  margin-top: 100px;
+}
+
+.btn {
+  background-color: #212529;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+  background-color: #212529;
+  color: #485D72;
+}
+
+.btn-xl {
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+#mainNav {
+  background-color: #212529;
+}
+
+#mainNav .navbar-toggler {
+  font-size: 12px;
+  right: 0;
+  padding: 13px;
+  text-transform: uppercase;
+  color: white;
+  border: 0;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#mainNav .navbar-brand {
+  font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
+}
+
+#mainNav .navbar-brand.active,
+#mainNav .navbar-brand:active,
+#mainNav .navbar-brand:focus,
+#mainNav .navbar-brand:hover {
+  color: #485D72;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  font-size: 90%;
+  font-weight: 400;
+  padding: 0.75em 0;
+  letter-spacing: 1px;
+  color: white;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active,
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+  color: #485D72;
+}
+
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+  }
+  #mainNav .navbar-brand {
+    font-size: 1.75em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link {
+    padding: 1.1em 1em !important;
+  }
+  #mainNav.navbar-shrink {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    font-size: 1.25em;
+    padding: 12px 0;
+  }
+}
+
+iframe {
+  width: 100%;
+  border: 0;
+  min-height: 80%;
+  height: 600px;
+  display: flex;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

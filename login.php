@@ -1,3 +1,12 @@
+<?php
+include('server.php');
+   if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +23,11 @@
 </head>
 
 <body>
-  <section id='login'>
+  <?php include 'header.php';?>
+  <section id='login' class='login'>
     <div class='container'>
-      <form method=POST action= '<?PHP echo htmlspecialchars($_SERVER['PHP_SELF']); ?>'>
+      <form method=POST action='login.php'>
+        <?php include('errors.php'); ?>
         <div class='row'>
           <div class='col-xl-12'>
             <h1 class='text-center headingTitle'>Login</h1>
@@ -26,11 +37,7 @@
             </div>
             <div class='form-group'>
               <label for='pass1'>Password</label>
-              <input class='form-control' type='password' id='pass1' name='pass1' required='required'>
-            </div>
-            <div class='form-group'>
-              <label for='pass2'>Confirm Password</label>
-              <input class='form-control' type='password' id='pass2' name='pass2' required='required'>
+              <input class='form-control' type='password' id='password' name='password' required='required'>
             </div>
             <div class='input-group'>
               <button class='btn btn-primary' type='submit' name='loginButton'>Login</button>
